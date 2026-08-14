@@ -23,8 +23,15 @@ after ~2.5 s, and has a 9 s hard failsafe so the page can never stay locked. An 
 in `<head>` decides before first paint whether to show it, which also means the overlay is
 never rendered when scripting is off. Edit the log lines directly in `index.html`.
 
-Images: `firstcatlogo.png` (original), `seal.jpg` (compressed hero copy),
-`favicon-32.png` / `favicon-180.png` (cropped from the logo), `og-image.jpg` (1200×630 social card).
+Images, all derived from `firstcatlogo.png`:
+
+- `seal.jpg` — compressed hero copy of the full plate
+- `mark.jpg` — the round mark used in the masthead, the boot intro and the footer. It keeps
+  the plate's own engraved circle as the rim, so `border-radius: 50%` never clips the cat.
+  If you re-crop it, keep the engraved circle inside the frame or the ears get cut.
+- `favicon-32.png` / `favicon-180.png` / `favicon.ico` — favicons are drawn square, so these
+  sit closer to the head than `mark.jpg` does, while still containing all of it
+- `og-image.jpg` — 1200×630 social card
 
 ## Live market panel
 
