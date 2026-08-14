@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The First Cat — $PROAILURUS</title>
+<meta name="description" content="Proailurus lemanensis, described by Henri Filhol in 1879, is the first true cat — the animal at the root of every feline that has ever lived. $PROAILURUS on Solana.">
+<meta name="theme-color" content="#d8c396">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The First Cat — $PROAILURUS">
+<meta property="og:description" content="Twenty-five million years before the internet had cats, there was one. Proailurus. $PROAILURUS on Solana.">
+<meta property="og:image" content="og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The First Cat — $PROAILURUS">
+<meta name="twitter:description" content="Twenty-five million years before the internet had cats, there was one.">
+<meta name="twitter:image" content="og-image.jpg">
+
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══ ambient paper layers ══ -->
+<div class="grain" aria-hidden="true"></div>
+<div class="foxing" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ══ ornament definitions, referenced with <use> ══ -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="orn-corner">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3 H44 M3 3 V44"/>
+        <path d="M9.5 9.5 H38 M9.5 9.5 V38"/>
+        <path d="M38 9.5 C60 9.5 69 20 69 34 C69 44.5 61 51 53 51 C45.5 51 41 45 43 38.5 C44.8 32.8 53 32 56.5 37.5"/>
+        <path d="M9.5 38 C9.5 60 20 69 34 69 C44.5 69 51 61 51 53 C51 45.5 45 41 38.5 43 C32.8 44.8 32 53 37.5 56.5"/>
+        <path d="M17 17 C33.5 19.5 44 30 46.5 46.5"/>
+        <path d="M46 12 C52 6 60 5 66 8"/>
+        <path d="M12 46 C6 52 5 60 8 66"/>
+      </g>
+      <circle cx="13.5" cy="13.5" r="2.1" fill="currentColor"/>
+      <circle cx="69.5" cy="7" r="1.4" fill="currentColor"/>
+      <circle cx="7" cy="69.5" r="1.4" fill="currentColor"/>
+    </g>
+
+    <g id="orn-fleuron">
+      <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round">
+        <path d="M0 20 H136"/><path d="M264 20 H400"/>
+        <path d="M136 20 C158 20 166 7 183 11 C194 13.6 194.5 26 185.5 28 C177.5 29.8 171 22.5 175.5 17"/>
+        <path d="M264 20 C242 20 234 7 217 11 C206 13.6 205.5 26 214.5 28 C222.5 29.8 229 22.5 224.5 17"/>
+        <path d="M148 20 C163 20.5 173.5 26 181 33.5"/>
+        <path d="M252 20 C237 20.5 226.5 26 219 33.5"/>
+        <path d="M200 11 L208.5 20 L200 29 L191.5 20 Z"/>
+      </g>
+      <circle cx="200" cy="20" r="2" fill="currentColor"/>
+    </g>
+
+    <g id="orn-rule-cap">
+      <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+        <path d="M0 9 L18 9"/><path d="M18 9 L26 3"/><path d="M18 9 L26 15"/>
+      </g>
+      <circle cx="29" cy="9" r="1.6" fill="currentColor"/>
+    </g>
+
+    <symbol id="ico-x" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </symbol>
+    <symbol id="ico-tg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M23.91 3.79 20.3 20.84c-.25 1.21-.98 1.5-1.99.94l-5.5-4.05-2.65 2.55c-.3.3-.55.55-1.12.55l.4-5.65 10.3-9.3c.45-.4-.1-.62-.69-.22L6.37 13.03.99 11.35c-1.17-.37-1.2-1.17.24-1.73L22.4 1.46c.97-.36 1.82.22 1.51 2.33z"/>
+    </symbol>
+    <symbol id="ico-copy" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+        <rect x="8.5" y="8.5" width="12" height="12"/>
+        <path d="M15.5 5.5h-11a1 1 0 0 0-1 1v11"/>
+      </g>
+    </symbol>
+    <symbol id="ico-check" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5 9.5 18 20 6.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ══════════ MASTHEAD ══════════ -->
+<header class="masthead" id="top">
+  <div class="masthead__inner">
+    <a class="brandmark" href="#top">
+      <span class="brandmark__seal"><img src="favicon-180.png" alt="" width="42" height="42"></span>
+      <span class="brandmark__text">
+        <strong>The First Cat</strong>
+        <em>Proailurus &middot; est. 25,000,000 BC</em>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#specimen">Specimen</a>
+      <a href="#lineage">Lineage</a>
+      <a href="#bestiary">Bestiary</a>
+      <a href="#domestication">Domestication</a>
+      <a href="#ledger">Ledger</a>
+      <a href="#sources">Sources</a>
+    </nav>
+
+    <div class="masthead__right">
+      <!-- TODO: replace with the real X and Telegram handles -->
+      <a class="icon-btn" href="https://x.com/proailurus" target="_blank" rel="noopener" aria-label="The First Cat on X">
+        <svg viewBox="0 0 24 24"><use href="#ico-x"></use></svg>
+      </a>
+      <a class="icon-btn" href="https://t.me/proailurus" target="_blank" rel="noopener" aria-label="The First Cat on Telegram">
+        <svg viewBox="0 0 24 24"><use href="#ico-tg"></use></svg>
+      </a>
+      <a class="btn btn--solid btn--sm" href="#ledger">Acquire</a>
+    </div>
+
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="masthead__rule" aria-hidden="true"></div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#specimen">I. The Specimen</a>
+    <a href="#lineage">II. The Lineage</a>
+    <a href="#bestiary">III. The Bestiary</a>
+    <a href="#domestication">IV. Domestication</a>
+    <a href="#ledger">V. The Ledger</a>
+    <a href="#expedition">VI. Expedition Log</a>
+    <a href="#sources">VII. Sources</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════ PLATE I — HERO ══════════ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+
+    <div class="hero__text">
+      <p class="eyebrow"><span class="eyebrow__line"></span>Plate I &middot; Type Specimen</p>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__title-sm">The</span>
+        <span class="hero__title-lg">First&nbsp;Cat</span>
+      </h1>
+
+      <p class="hero__latin"><i>Proailurus lemanensis</i> &middot; Filhol, 1879</p>
+
+      <div class="ticker-plate">
+        <span class="ticker-plate__label">Ticker</span>
+        <span class="ticker-plate__value">$PROAILURUS</span>
+        <span class="ticker-plate__chain">Solana</span>
+      </div>
+
+      <p class="hero__lede">
+        Twenty-five million years before anyone thought to put a cat on the internet,
+        there was one cat. Nine kilograms, long-tailed, sharp-clawed, half its life
+        spent in the trees of Oligocene Europe. Every lion, every lynx, every animal
+        asleep on your keyboard descends from it.
+      </p>
+
+      <div class="ca-block">
+        <div class="ca-block__head">
+          <span>Contract Address</span>
+          <span class="ca-block__chain">SPL &middot; Solana</span>
+        </div>
+        <button class="ca-block__body" type="button" data-copy="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" title="Click to copy">
+          <!-- TODO: paste the live mint address into data-copy and the code below -->
+          <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>
+          <span class="ca-block__copy">
+            <svg class="i-copy" viewBox="0 0 24 24"><use href="#ico-copy"></use></svg>
+            <svg class="i-check" viewBox="0 0 24 24"><use href="#ico-check"></use></svg>
+            <span class="ca-block__copytext">Copy</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#ledger">Acquire the Specimen</a>
+        <a class="btn btn--ghost btn--icon" href="https://x.com/proailurus" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><use href="#ico-x"></use></svg> Follow on X
+        </a>
+        <a class="btn btn--ghost btn--icon" href="https://t.me/proailurus" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><use href="#ico-tg"></use></svg> Telegram
+        </a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>~25 Mya</dt><dd>First appearance</dd></div>
+        <div><dt>9 kg</dt><dd>Body mass</dd></div>
+        <div><dt>1879</dt><dd>Year described</dd></div>
+        <div><dt>40</dt><dd>Wild cats living today</dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero__plate">
+      <div class="mount">
+        <span class="mount__orn mount__orn--tl"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></span>
+        <span class="mount__orn mount__orn--tr"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></span>
+        <span class="mount__orn mount__orn--bl"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></span>
+        <span class="mount__orn mount__orn--br"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></span>
+        <div class="mount__window">
+          <img src="seal.jpg" width="900" height="900" alt="Engraved portrait of Proailurus, the first true cat" fetchpriority="high">
+        </div>
+        <div class="wax-seal" aria-hidden="true">
+          <span>Genus<br><strong>I</strong><br>Felidae</span>
+        </div>
+      </div>
+      <figcaption>
+        <b>Fig. 1.</b> <i>Proailurus lemanensis</i>, restored. The genus is known chiefly
+        from the phosphorites of Quercy and the beds of Saint-Gérand-le-Puy, France.
+      </figcaption>
+    </figure>
+
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span></span>Turn the page</div>
+</section>
+
+<!-- ══════════ RUNNING FRIEZE ══════════ -->
+<div class="frieze" aria-hidden="true">
+  <div class="frieze__track">
+    <span>Proailurus lemanensis</span><i>✦</i><span>Pseudaelurus</span><i>✦</i><span>Styriofelis</span><i>✦</i>
+    <span>Machairodontinae</span><i>✦</i><span>Smilodon fatalis</span><i>✦</i><span>Homotherium</span><i>✦</i>
+    <span>Xenosmilus</span><i>✦</i><span>Panthera blytheae</span><i>✦</i><span>Panthera spelaea</span><i>✦</i>
+    <span>Felis lybica</span><i>✦</i><span>Felis catus</span><i>✦</i>
+    <span>Proailurus lemanensis</span><i>✦</i><span>Pseudaelurus</span><i>✦</i><span>Styriofelis</span><i>✦</i>
+    <span>Machairodontinae</span><i>✦</i><span>Smilodon fatalis</span><i>✦</i><span>Homotherium</span><i>✦</i>
+    <span>Xenosmilus</span><i>✦</i><span>Panthera blytheae</span><i>✦</i><span>Panthera spelaea</span><i>✦</i>
+    <span>Felis lybica</span><i>✦</i><span>Felis catus</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ══════════ PLATE II — THE SPECIMEN ══════════ -->
+<section class="plate" id="specimen">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate II</p>
+      <h2 class="plate__title">The Specimen</h2>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <div class="specimen__intro">
+      <div class="prose reveal">
+        <p class="dropcap">
+          In 1879 the French palaeontologist <b>Henri Filhol</b> gave a name to a small
+          carnivore pulled from the limestone of central France. He called it
+          <i>Proailurus</i> — <span class="gloss">“before the cat.”</span> In outline it
+          would have looked like a civet: low, long, supple, built to move along a branch.
+          But the teeth were wrong for a civet. The teeth were a cat's.
+        </p>
+        <p>
+          It is now placed in its own subfamily, <b>Proailurinae</b>, at the base of the
+          family <b>Felidae</b>, and is widely regarded as the first true cat — the animal
+          from which <i>Pseudaelurus</i>, the sabre-tooths, the great cats and the small
+          cats all descend. Everything below is a footnote to this one animal.
+        </p>
+      </div>
+
+      <figure class="figplate figplate--tall reveal">
+        <div class="figplate__frame">
+          <img src="fcat.webp" width="1168" height="944" loading="lazy" decoding="async"
+               alt="Life restoration of Proailurus standing on a branch in an Oligocene forest">
+        </div>
+        <figcaption>
+          <b>Fig. 2.</b> <i>Proailurus</i> restored in life. Note the length of the tail and
+          the low, supple back — this was an animal that hunted from the branches.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="spec-grid">
+      <article class="spec reveal">
+        <span class="spec__no">i</span>
+        <h3>Classification</h3>
+        <p>Carnivora → <b>Felidae</b> → Proailurinae → <i>Proailurus</i>. Three species are
+        recognised: <i>P. lemanensis</i> (the type), <i>P. major</i> and <i>P. bourbonnensis</i>.</p>
+      </article>
+
+      <article class="spec reveal">
+        <span class="spec__no">ii</span>
+        <h3>Age</h3>
+        <p>Late Oligocene into the Miocene — roughly <b>25 million years ago</b>, with the
+        genus spanning something like 34 to 20 Mya depending on which material is included.</p>
+      </article>
+
+      <article class="spec reveal">
+        <span class="spec__no">iii</span>
+        <h3>Mass</h3>
+        <p><i>P. lemanensis</i> weighed about <b>9 kg</b> (20 lb) — a shade bigger than a
+        house cat. <i>P. major</i> reached some 23 kg; <i>P. bourbonnensis</i> stayed at 7–10 kg.</p>
+      </article>
+
+      <article class="spec reveal">
+        <span class="spec__no">iv</span>
+        <h3>Build</h3>
+        <p>A long tail for balance, large forward-set eyes, and sharp, <b>retractile claws</b>
+        — the same mechanism a cat uses today. Compact, low-slung, built like a small cougar.</p>
+      </article>
+
+      <article class="spec reveal">
+        <span class="spec__no">v</span>
+        <h3>Habit</h3>
+        <p>At least <b>partly arboreal</b>. A climbing ambush hunter of the warm, closed
+        forests that covered Europe before the grasslands arrived.</p>
+      </article>
+
+      <article class="spec reveal">
+        <span class="spec__no">vi</span>
+        <h3>Range</h3>
+        <p>Saint-Gérand-le-Puy and Quercy in <b>France</b>; Wiesbaden-Amöneburg and Budenheim
+        in <b>Germany</b>; further material from <b>Spain, Mongolia and China</b>.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATE III — THE LINEAGE ══════════ -->
+<section class="plate plate--alt" id="lineage">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate III</p>
+      <h2 class="plate__title">The Lineage</h2>
+      <p class="plate__sub">Sixty-six million years, abridged</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <ol class="timeline">
+      <li class="tl reveal">
+        <span class="tl__date">66 Mya</span>
+        <div class="tl__body">
+          <h3>The impact</h3>
+          <p>An asteroid ends the non-avian dinosaurs. The mammals inherit an empty world
+          and begin to fill it.</p>
+        </div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__date">42 Mya</span>
+        <div class="tl__body">
+          <h3>Carnivora begins</h3>
+          <p>Small tree-climbing predators called <b>miacids</b> throw off a new branch —
+          the order <b>Carnivora</b>. Everything with a carnassial tooth starts here.</p>
+        </div>
+      </li>
+      <li class="tl reveal tl--mark">
+        <span class="tl__date">~25 Mya</span>
+        <div class="tl__body">
+          <h3><i>Proailurus</i> — the first cat</h3>
+          <p>Nine kilograms of retractile claw and forest patience. Not quite the cat we
+          know, but the first animal palaeontologists are willing to call one.</p>
+        </div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__date">~20 Mya</span>
+        <div class="tl__body">
+          <h3><i>Pseudaelurus</i> and the split</h3>
+          <p>A lynx-sized successor spreads out of Europe and crosses into North America,
+          ending the long <b>“Cat Gap”</b> in that continent's fossil record. Here the family
+          divides: the <b>Machairodontinae</b> — the sabre-tooths — on one side, and, by way
+          of <i>Styriofelis</i>, the <b>Felinae</b> on the other. Every cat alive is on the second branch.</p>
+        </div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__date">4.4 Mya</span>
+        <div class="tl__body">
+          <h3><i>Panthera blytheae</i></h3>
+          <p>A skull described from Tibet in 2013 pushes the origin of the big cats back
+          past 4.4 million years — and points to <b>Asia</b>, not Africa, as their homeland.</p>
+        </div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__date">500,000 yrs</span>
+        <div class="tl__body">
+          <h3>The cave lion</h3>
+          <p><i>Panthera spelaea</i> parts ways with the modern lion and takes Ice Age Europe,
+          Britain included. Palaeolithic painters put it on cave walls.</p>
+        </div>
+      </li>
+      <li class="tl reveal tl--mark">
+        <span class="tl__date">~10,000 yrs</span>
+        <div class="tl__body">
+          <h3>Cats move in</h3>
+          <p>Near Eastern wildcats follow the mice into the grain stores of the Fertile
+          Crescent — and stay. Nobody sets out to domesticate them.</p>
+        </div>
+      </li>
+      <li class="tl reveal">
+        <span class="tl__date">10,000–8,000 yrs</span>
+        <div class="tl__body">
+          <h3>The sabres fall</h3>
+          <p>After tens of millions of years the machairodonts run out. The branch that
+          kept its ordinary teeth is the branch that survives.</p>
+        </div>
+      </li>
+      <li class="tl reveal tl--now">
+        <span class="tl__date">Today</span>
+        <div class="tl__body">
+          <h3>Forty wild species, and one on the sofa</h3>
+          <p>Forty species of wild cat are recognised. One further species has spread to
+          every continent people live on by being extremely good at being looked after.</p>
+        </div>
+      </li>
+    </ol>
+
+    <figure class="figplate figplate--chart reveal">
+      <div class="figplate__frame">
+        <img src="evo.jpg" width="640" height="1067" loading="lazy" decoding="async"
+             alt="Comparative chart of four fossil cats: Proailurus lemanensis, Pseudaelurus turnauensis, Miomachairodus pseudaeluroides and Machairodus aphanistus">
+      </div>
+      <figcaption>
+        <b>Fig. 3.</b> Four stages in the rise of the cats, from <i>Proailurus lemanensis</i>
+        to <i>Machairodus aphanistus</i>. The animals are not drawn to scale and do not form a
+        single unbroken line of descent — they are plausible models for how the transition ran.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ PLATE IV — THE BESTIARY ══════════ -->
+<section class="plate" id="bestiary">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate IV</p>
+      <h2 class="plate__title">The Bestiary</h2>
+      <p class="plate__sub">What the first cat gave rise to</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <div class="bestiary">
+      <article class="beast reveal">
+        <header>
+          <h3><i>Pseudaelurus</i></h3>
+          <p class="beast__epithet">The explorer</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Age</span><b>~20 Mya</b></li>
+          <li><span>Size</span><b>Lynx-sized</b></li>
+        </ul>
+        <p>A forest hunter of small herbivores that walked out of Eurasia and into North
+        America, closing the <b>Cat Gap</b>. From it come both the sabre-tooths and the
+        ancestors of every modern cat.</p>
+      </article>
+
+      <article class="beast reveal">
+        <header>
+          <h3><i>Smilodon</i></h3>
+          <p class="beast__epithet">The sabre-tooth</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Until</span><b>~10,000 yrs ago</b></li>
+          <li><span>Canines</span><b>28 cm</b></li>
+        </ul>
+        <p>Stocky, heavily muscled, built to ambush and hold large prey rather than run it
+        down. Hundreds of individuals have been recovered from the <b>La Brea tar pits</b>.</p>
+      </article>
+
+      <article class="beast reveal">
+        <header>
+          <h3><i>Homotherium</i></h3>
+          <p class="beast__epithet">The scimitar-tooth</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Span</span><b>~4 million yrs</b></li>
+          <li><span>Canines</span><b>~10 cm, serrated</b></li>
+        </ul>
+        <p>Found on five continents. Shorter-fanged and longer-limbed than <i>Smilodon</i>,
+        and genomic evidence suggests it may have <b>hunted in groups</b>.</p>
+      </article>
+
+      <article class="beast reveal">
+        <header>
+          <h3><i>Xenosmilus</i></h3>
+          <p class="beast__epithet">The shark-tooth</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Age</span><b>2 Mya – 300,000 yrs</b></li>
+          <li><span>Teeth</span><b>Serrated, shark-like</b></li>
+        </ul>
+        <p>Its serrated teeth are set in a pattern closer to a shark's than a cat's —
+        consistent with a <b>bite-and-retreat</b> strategy: take a mouthful, wait.</p>
+      </article>
+
+      <article class="beast reveal">
+        <header>
+          <h3><i>Panthera spelaea</i></h3>
+          <p class="beast__epithet">The cave lion</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Diverged</span><b>~500,000 yrs ago</b></li>
+          <li><span>Range</span><b>Ice Age Eurasia</b></li>
+        </ul>
+        <p>As large as a modern lion and ranging as far as Britain, taking reindeer and
+        bear cubs. We know its posture from the people who <b>painted it</b>.</p>
+      </article>
+
+      <article class="beast beast--living reveal">
+        <header>
+          <h3><i>Felis catus</i></h3>
+          <p class="beast__epithet">Still here</p>
+        </header>
+        <ul class="beast__meta">
+          <li><span>Since</span><b>~10,000 yrs ago</b></li>
+          <li><span>Status</span><b>Winning</b></li>
+        </ul>
+        <p>No sabres, no bulk, no continent-spanning kill strategy. Just a small ambush
+        predator that worked out humans keep the grain — and therefore the mice — in one place.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATE V — DOMESTICATION ══════════ -->
+<section class="plate plate--alt" id="domestication">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate V</p>
+      <h2 class="plate__title">The Long Domestication</h2>
+      <p class="plate__sub">Or: how they got in</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <div class="dom">
+      <div class="prose reveal">
+        <p class="dropcap">
+          Around ten thousand years ago people in the Fertile Crescent started storing grain.
+          Grain draws rodents; rodents draw <b>Near Eastern wildcats</b>, <i>Felis lybica</i>.
+          The cats that could tolerate a village at close quarters ate better than the cats
+          that could not, and that tolerance was passed on. No one was breeding them. There
+          was no project. The animal simply moved in and stayed.
+        </p>
+        <p>
+          This is why domestic cats are so unlike dogs, cattle or horses: they were not
+          selected <i>for</i> anything. Living alongside us left its mark on their genome all
+          the same — in genes tied to <b>fear response</b> and to <b>learning from food rewards</b>,
+          which is roughly a geneticist's way of saying <em>less skittish, more bribable</em>.
+        </p>
+        <p>
+          The rest is distribution. Cats travelled on grain barges and trading ships,
+          through Egypt, across the Mediterranean, and eventually everywhere. The body plan
+          barely changed. A house cat is still, structurally, a small ambush predator built
+          on a design that has been working since <i>Proailurus</i>.
+        </p>
+      </div>
+
+      <aside class="dom__aside">
+        <blockquote class="pullquote reveal">
+          <p>They adopted us, rather than the other way around.</p>
+          <cite>— Nature / PBS, <i>The Making of a Cat</i></cite>
+        </blockquote>
+
+        <div class="notecard reveal">
+          <h4>Field Notes</h4>
+          <ul>
+            <li><b>Ancestor</b> — <i>Felis lybica</i>, the Near Eastern wildcat, not the European one.</li>
+            <li><b>Where</b> — the Fertile Crescent, alongside the first farming.</li>
+            <li><b>Mechanism</b> — self-domestication. Tolerance was the trait that paid.</li>
+            <li><b>Result</b> — one species, every inhabited continent, zero effort expended on being useful.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATE VI — THE LEDGER ══════════ -->
+<section class="plate" id="ledger">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate VI</p>
+      <h2 class="plate__title">The Ledger</h2>
+      <p class="plate__sub">Acquisition record &amp; terms</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <div class="ledger">
+      <div class="ledger__sheet reveal">
+        <div class="ledger__corner ledger__corner--tl"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></div>
+        <div class="ledger__corner ledger__corner--br"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></div>
+
+        <table class="ledger__table">
+          <caption>Register of the Specimen</caption>
+          <tbody>
+            <tr><th scope="row">Name</th><td>The First Cat</td></tr>
+            <tr><th scope="row">Ticker</th><td><b>$PROAILURUS</b></td></tr>
+            <tr><th scope="row">Chain</th><td>Solana &middot; SPL</td></tr>
+            <tr><th scope="row">Total supply</th><td>1,000,000,000</td></tr>
+            <tr><th scope="row">Buy / sell tax</th><td>0% &middot; 0%</td></tr>
+            <tr><th scope="row">Liquidity</th><td>Burned</td></tr>
+            <tr><th scope="row">Mint authority</th><td>Revoked</td></tr>
+            <tr><th scope="row">Distribution</th><td>Fair launch. No presale, no team allocation.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="ca-block ca-block--wide">
+          <div class="ca-block__head">
+            <span>Contract Address</span>
+            <span class="ca-block__chain">Verify before you buy</span>
+          </div>
+          <button class="ca-block__body" type="button" data-copy="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" title="Click to copy">
+            <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>
+            <span class="ca-block__copy">
+              <svg class="i-copy" viewBox="0 0 24 24"><use href="#ico-copy"></use></svg>
+              <svg class="i-check" viewBox="0 0 24 24"><use href="#ico-check"></use></svg>
+              <span class="ca-block__copytext">Copy</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <ol class="howto">
+        <li class="reveal">
+          <span class="howto__no">I</span>
+          <h3>Get a wallet</h3>
+          <p>Install a Solana wallet — Phantom or Solflare — and write the seed phrase down
+          on paper. Never type it into anything that asks for it.</p>
+        </li>
+        <li class="reveal">
+          <span class="howto__no">II</span>
+          <h3>Fund it with SOL</h3>
+          <p>Buy SOL on any exchange and send it to your wallet address. Keep a little spare
+          for network fees.</p>
+        </li>
+        <li class="reveal">
+          <span class="howto__no">III</span>
+          <h3>Swap</h3>
+          <p>Open Jupiter or Raydium, paste the contract address above, check it character for
+          character against this page, and swap.</p>
+        </li>
+        <li class="reveal">
+          <span class="howto__no">IV</span>
+          <h3>Hold</h3>
+          <p>The genus survived the Oligocene, the Miocene and the Cat Gap. Consider matching
+          its time horizon.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATE VII — EXPEDITION LOG ══════════ -->
+<section class="plate plate--alt" id="expedition">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate VII</p>
+      <h2 class="plate__title">Expedition Log</h2>
+      <p class="plate__sub">The dig, in four chapters</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <div class="log">
+      <article class="log__ch reveal">
+        <p class="log__no">Chapter I</p>
+        <h3>Excavation</h3>
+        <ul>
+          <li>Fair launch on Solana</li>
+          <li>Liquidity burned, mint revoked</li>
+          <li>Site opened to the public</li>
+        </ul>
+      </article>
+      <article class="log__ch reveal">
+        <p class="log__no">Chapter II</p>
+        <h3>Preparation</h3>
+        <ul>
+          <li>DEX listings and chart trackers</li>
+          <li>First thousand holders</li>
+          <li>Engraving series &amp; sticker plates</li>
+        </ul>
+      </article>
+      <article class="log__ch reveal">
+        <p class="log__no">Chapter III</p>
+        <h3>Exhibition</h3>
+        <ul>
+          <li>CEX conversations</li>
+          <li>Collaborations across the felid family</li>
+          <li>The Proailurus Gallery — community art</li>
+        </ul>
+      </article>
+      <article class="log__ch reveal">
+        <p class="log__no">Chapter IV</p>
+        <h3>Preservation</h3>
+        <ul>
+          <li>Treasury for wild-cat conservation</li>
+          <li>Long-term holder register</li>
+          <li>Twenty-five million more years</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATE VIII — SOURCES ══════════ -->
+<section class="plate" id="sources">
+  <div class="wrap">
+    <header class="plate__head reveal">
+      <p class="plate__num">Plate VIII</p>
+      <h2 class="plate__title">Bibliography</h2>
+      <p class="plate__sub">Everything above is drawn from these</p>
+      <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+    </header>
+
+    <ol class="biblio">
+      <li class="reveal">
+        <a href="https://www.catsg.org/evolution" target="_blank" rel="noopener">
+          <span class="biblio__no">1</span>
+          <span class="biblio__body">
+            <b>Evolution of the Cats</b>
+            <em>IUCN SSC Cat Specialist Group</em>
+            <small>The felid family tree from <i>Proailurus</i> through <i>Pseudaelurus</i> and <i>Styriofelis</i> to the forty wild species living today.</small>
+            <span class="biblio__host">catsg.org</span>
+          </span>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="https://www.pbs.org/wnet/nature/blog/the-making-of-a-cat/" target="_blank" rel="noopener">
+          <span class="biblio__no">2</span>
+          <span class="biblio__body">
+            <b>The Making of a Cat</b>
+            <em>Nature &middot; PBS</em>
+            <small>From miacids to <i>Panthera blytheae</i>, and the argument that cats domesticated themselves.</small>
+            <span class="biblio__host">pbs.org</span>
+          </span>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="https://www.acs.org/pressroom/tiny-matters/the-domesticated-cat.html" target="_blank" rel="noopener">
+          <span class="biblio__no">3</span>
+          <span class="biblio__body">
+            <b>The Domesticated Cat</b>
+            <em>Tiny Matters &middot; American Chemical Society</em>
+            <small>The chemistry and genetics of how <i>Felis lybica</i> became the animal in your house.</small>
+            <span class="biblio__host">acs.org</span>
+          </span>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="https://www.discoverwildlife.com/animal-facts/mammals/prehistoric-cats" target="_blank" rel="noopener">
+          <span class="biblio__no">4</span>
+          <span class="biblio__body">
+            <b>Prehistoric Cats</b>
+            <em>BBC Discover Wildlife</em>
+            <small>Field notes on <i>Smilodon</i>, <i>Homotherium</i>, <i>Xenosmilus</i> and the cave lion.</small>
+            <span class="biblio__host">discoverwildlife.com</span>
+          </span>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="https://en.wikipedia.org/wiki/Proailurus" target="_blank" rel="noopener">
+          <span class="biblio__no">5</span>
+          <span class="biblio__body">
+            <b><i>Proailurus</i></b>
+            <em>Wikipedia</em>
+            <small>Filhol 1879, the three species, the fossil localities and the mass estimates quoted on this page.</small>
+            <span class="biblio__host">wikipedia.org</span>
+          </span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ COLOPHON ══════════ -->
+<footer class="colophon">
+  <div class="wrap">
+    <div class="fleuron fleuron--footer"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
+
+    <div class="colophon__grid">
+      <div class="colophon__brand">
+        <img src="favicon-180.png" alt="" width="64" height="64">
+        <p class="colophon__name">The First Cat</p>
+        <p class="colophon__latin"><i>Proailurus lemanensis</i></p>
+      </div>
+
+      <div class="colophon__social">
+        <a class="social-plate" href="https://x.com/proailurus" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><use href="#ico-x"></use></svg>
+          <span>Follow on X</span>
+        </a>
+        <a class="social-plate" href="https://t.me/proailurus" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><use href="#ico-tg"></use></svg>
+          <span>Join Telegram</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="colophon__disclaimer">
+      $PROAILURUS is a community memecoin with no intrinsic value and no expectation of
+      financial return. It is not an investment, and nothing here is financial advice.
+      The palaeontology is real and sourced above; the coin is for fun. Always verify the
+      contract address yourself before buying.
+    </p>
+
+    <p class="colophon__legal">
+      © <span id="year">2026</span> The First Cat &middot; $PROAILURUS &middot; Solana
+    </p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
