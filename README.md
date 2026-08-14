@@ -23,15 +23,23 @@ after ~2.5 s, and has a 9 s hard failsafe so the page can never stay locked. An 
 in `<head>` decides before first paint whether to show it, which also means the overlay is
 never rendered when scripting is off. Edit the log lines directly in `index.html`.
 
-Images, all derived from `firstcatlogo.png`:
+Images, all derived from `logo.png` (the source medallion, a disc on a white ground):
 
-- `seal.jpg` — compressed hero copy of the full plate
-- `mark.jpg` — the round mark used in the masthead, the boot intro and the footer. It keeps
-  the plate's own engraved circle as the rim, so `border-radius: 50%` never clips the cat.
-  If you re-crop it, keep the engraved circle inside the frame or the ears get cut.
+- `mark.png` — the round mark in the masthead, boot intro and footer. Transparent outside
+  the disc, so nothing white can appear inside a `border-radius: 50%` frame.
+- `seal.jpg` — hero plate: the same disc on the page's paper tone
 - `favicon-32.png` / `favicon-180.png` / `favicon.ico` — favicons are drawn square, so these
-  sit closer to the head than `mark.jpg` does, while still containing all of it
+  crop *inside* the disc (all brown, no white corners) while still holding the whole head
 - `og-image.jpg` — 1200×630 social card
+
+### Regenerating them
+
+The disc is **not** centred in `logo.png` and is not perfectly round: measured centre
+539.5 / 541, radii 506 horizontal and 514.5 vertical. Crop to a square smaller than the
+larger radius and it visibly shaves the disc — that is easy to miss at favicon size and
+obvious in the hero. The derivatives are built from a 1042 px square around that centre,
+with `ImageAttributes.SetColorKey` keying 243–255 white to transparent, so the disc survives
+whole and the background drops out. Re-measure before re-cropping if the source ever changes.
 
 ## Live market panel
 
