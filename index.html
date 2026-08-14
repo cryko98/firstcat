@@ -63,6 +63,7 @@
 <!-- ══ ambient paper layers ══ -->
 <div class="grain" aria-hidden="true"></div>
 <div class="foxing" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
 
 <!-- ══ ornament definitions, referenced with <use> ══ -->
@@ -638,6 +639,48 @@
       <div class="fleuron"><svg viewBox="0 0 400 40"><use href="#orn-fleuron"></use></svg></div>
     </header>
 
+    <!-- live market — fills itself once data-token holds the real mint -->
+    <section class="term reveal" id="market" aria-label="Live market data"
+             data-token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+      <header class="term__bar">
+        <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="term__path">proailurus@solana ~ market</span>
+        <span class="term__live" data-state="idle"><i aria-hidden="true"></i><b>awaiting</b></span>
+      </header>
+
+      <dl class="term__grid">
+        <div class="term__cell">
+          <dt>Price USD</dt>
+          <dd data-field="price">&mdash;</dd>
+          <p class="term__note" data-field="change">contract not set</p>
+        </div>
+        <div class="term__cell">
+          <dt>24h Volume</dt>
+          <dd data-field="volume">&mdash;</dd>
+          <p class="term__note">last 24 hours</p>
+        </div>
+        <div class="term__cell">
+          <dt>Liquidity</dt>
+          <dd data-field="liquidity">&mdash;</dd>
+          <p class="term__note" data-field="pool">pool</p>
+        </div>
+        <div class="term__cell">
+          <dt>Market cap</dt>
+          <dd data-field="mcap">&mdash;</dd>
+          <p class="term__note">fully diluted</p>
+        </div>
+      </dl>
+
+      <footer class="term__foot">
+        <p class="term__prompt"><span>$</span> proailurus --status<i class="term__caret" aria-hidden="true"></i></p>
+        <div class="term__actions">
+          <a class="term__btn is-off" data-field="chart" href="#market"
+             aria-disabled="true" tabindex="-1" target="_blank" rel="noopener">Open chart &rsaquo;</a>
+          <a class="term__btn term__btn--go" href="#howto">Buy now &rsaquo;</a>
+        </div>
+      </footer>
+    </section>
+
     <div class="ledger">
       <div class="ledger__sheet reveal">
         <div class="ledger__corner ledger__corner--tl"><svg viewBox="0 0 76 76"><use href="#orn-corner"></use></svg></div>
@@ -670,7 +713,7 @@
         </div>
       </div>
 
-      <ol class="howto">
+      <ol class="howto" id="howto">
         <li class="reveal">
           <span class="howto__no">I</span>
           <h3>Get a wallet</h3>

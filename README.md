@@ -26,11 +26,28 @@ never rendered when scripting is off. Edit the log lines directly in `index.html
 Images: `firstcatlogo.png` (original), `seal.jpg` (compressed hero copy),
 `favicon-32.png` / `favicon-180.png` (cropped from the logo), `og-image.jpg` (1200×630 social card).
 
+## Live market panel
+
+The terminal panel at the top of Plate VI pulls price, 24h volume, liquidity and market cap
+from the public [DexScreener](https://docs.dexscreener.com/api/reference) API — no key, no
+build step. It reads the mint from `data-token` on `<section id="market">`:
+
+- **Placeholder mint** (the `xxxx…` default) → it shows `awaiting`, em-dashes, and a disabled
+  chart button. Nothing is requested from the network.
+- **Real mint, no pool yet** → `no pool yet`.
+- **Real mint with a pool** → fills in, badge turns green, the *Open chart* button points at
+  the pair on DexScreener. Refreshes every 45 s, and stops polling while the tab is hidden.
+- **API unreachable** → `offline`, last values stay on screen.
+
+When several pools exist it picks the deepest by liquidity. Market cap falls back to FDV if
+DexScreener does not report one.
+
 ## Before launch — three things to swap
 
-1. **Contract address.** It appears in two places in `index.html`, each time as both a
-   `data-copy` attribute and the visible `<code>` text. Search for `xxxxxxxxxxxx` and
-   replace all four occurrences with the real mint address.
+1. **Contract address.** It appears in three places in `index.html`: the hero and Ledger
+   copy blocks (each a `data-copy` attribute plus the visible `<code>` text) and the
+   `data-token` on the market panel. Search for `xxxxxxxxxxxx` and replace every occurrence
+   with the real mint address.
 
 2. **Socials.** Search `index.html` for `x.com/proailurus` and `t.me/proailurus`
    (three occurrences each: masthead, hero, footer) and point them at the real accounts.

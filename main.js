@@ -217,6 +217,161 @@
     });
   }
 
+  /* ── pointer-reactive lighting ────────────────────────── */
+  var fine = window.matchMedia('(pointer: fine)').matches;
+
+  if (fine && !reduced) {
+    docEl.classList.add('has-pointer');
+
+    /* the lamp trails the pointer slightly — glued to it reads cheap */
+    var tgX = window.innerWidth / 2, tgY = window.innerHeight * .38;
+    var curX = tgX, curY = tgY, running = false;
+
+    function ease() {
+      curX += (tgX - curX) * 0.11;
+      curY += (tgY - curY) * 0.11;
+      docEl.style.setProperty('--mx', curX.toFixed(1) + 'px');
+      docEl.style.setProperty('--my', curY.toFixed(1) + 'px');
+      if (Math.abs(tgX - curX) > 0.4 || Math.abs(tgY - curY) > 0.4) {
+        requestAnimationFrame(ease);
+      } else {
+        running = false;
+      }
+    }
+
+    window.addEventListener('pointermove', function (e) {
+      tgX = e.clientX; tgY = e.clientY;
+      if (running) return;
+      running = true;
+      requestAnimationFrame(ease);
+    }, { passive: true });
+
+    /* the market panel gets its own local sheen */
+    var panel = document.getElementById('market');
+    if (panel) {
+      var tQueued = false, tx = 0, ty = 0;
+      panel.addEventListener('pointermove', function (e) {
+        var r = panel.getBoundingClientRect();
+        tx = e.clientX - r.left; ty = e.clientY - r.top;
+        if (tQueued) return;
+        tQueued = true;
+        requestAnimationFrame(function () {
+          panel.style.setProperty('--tx', tx + 'px');
+          panel.style.setProperty('--ty', ty + 'px');
+          tQueued = false;
+        });
+      }, { passive: true });
+    }
+  }
+
+  /* ── live market data ─────────────────────────────────── */
+  (function () {
+    var term = document.getElementById('market');
+    if (!term) return;
+
+    var token = (term.getAttribute('data-token') || '').trim();
+    var badge = term.querySelector('.term__live');
+    var field = {};
+    Array.prototype.forEach.call(term.querySelectorAll('[data-field]'), function (el) {
+      field[el.getAttribute('data-field')] = el;
+    });
+
+    function state(name, label) {
+      badge.setAttribute('data-state', name);
+      badge.querySelector('b').textContent = label;
+    }
+
+    /* the mint is still the xxxx… placeholder — sit quietly and say so */
+    if (!token || /^x+$/i.test(token) || token.length < 32) {
+      state('idle', 'awaiting');
+      return;
+    }
+
+    var money = function (n, digits) {
+      return '$' + new Intl.NumberFormat('en-US', {
+        notation: 'compact', maximumFractionDigits: digits === undefined ? 1 : digits
+      }).format(n);
+    };
+
+    function price(p) {
+      if (!isFinite(p) || p <= 0) return '—';
+      if (p >= 1) return '$' + p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      /* sub-dollar: keep four significant figures, drop exponent notation */
+      var s = p.toPrecision(4);
+      if (s.indexOf('e') > -1) s = p.toFixed(12).replace(/0+$/, '');
+      return '$' + s;
+    }
+
+    function flash(el, text) {
+      if (el.textContent === text) return;
+      el.textContent = text;
+      el.classList.add('is-fresh');
+      setTimeout(function () { el.classList.remove('is-fresh'); }, 900);
+    }
+
+    function paint(pair) {
+      flash(field.price, price(parseFloat(pair.priceUsd)));
+      flash(field.volume, pair.volume && pair.volume.h24 != null ? money(pair.volume.h24) : '—');
+      flash(field.liquidity, pair.liquidity && pair.liquidity.usd != null ? money(pair.liquidity.usd) : '—');
+
+      var cap = pair.marketCap != null ? pair.marketCap : pair.fdv;
+      flash(field.mcap, cap != null ? money(cap) : '—');
+
+      var ch = pair.priceChange && pair.priceChange.h24;
+      if (ch != null && isFinite(ch)) {
+        field.change.textContent = (ch > 0 ? '+' : '') + Number(ch).toFixed(1) + '%  ·  24h';
+        field.change.className = 'term__note ' + (ch >= 0 ? 'up' : 'down');
+      } else {
+        field.change.textContent = '24h change unavailable';
+        field.change.className = 'term__note';
+      }
+
+      field.pool.textContent = 'pool · ' + (pair.dexId || 'dex');
+
+      if (pair.url) {
+        field.chart.href = pair.url;
+        field.chart.classList.remove('is-off');
+        field.chart.removeAttribute('aria-disabled');
+        field.chart.removeAttribute('tabindex');
+      }
+      state('live', 'live');
+    }
+
+    var timer;
+
+    function load() {
+      fetch('https://api.dexscreener.com/latest/dex/tokens/' + encodeURIComponent(token))
+        .then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          var pairs = (data && data.pairs) || [];
+          if (!pairs.length) { state('idle', 'no pool yet'); return; }
+          /* deepest pool wins — that is the one people actually trade */
+          pairs.sort(function (a, b) {
+            return ((b.liquidity && b.liquidity.usd) || 0) - ((a.liquidity && a.liquidity.usd) || 0);
+          });
+          paint(pairs[0]);
+        })
+        .catch(function () { state('down', 'offline'); });
+    }
+
+    function start() {
+      load();
+      clearInterval(timer);
+      timer = setInterval(load, 45000);
+    }
+
+    /* don't poll a tab nobody is looking at */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) clearInterval(timer);
+      else start();
+    });
+
+    start();
+  })();
+
   /* ── gentle parallax on the mounted plate ─────────────── */
   var mount = document.querySelector('.mount');
   if (mount && !reduced && window.matchMedia('(pointer: fine)').matches) {
