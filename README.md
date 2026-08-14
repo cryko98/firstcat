@@ -9,7 +9,19 @@ No build step, no dependencies. Three files do the work:
 | --- | --- |
 | `index.html` | All markup, plus the inline SVG ornament / icon definitions |
 | `styles.css` | The whole design system (aged-paper layers, engraved rules, plates) |
-| `main.js` | Copy-to-clipboard, scroll reveals, scroll-spy nav, mobile menu, hero parallax |
+| `main.js` | Boot intro, copy-to-clipboard, scroll reveals, scroll-spy nav, mobile menu, hero parallax |
+
+## The boot intro
+
+A terminal-style overlay plays before the page (`<div class="boot">` at the top of the body).
+It runs **once per browser session** — the flag lives in `sessionStorage` under
+`proailurus-booted`, so a reload inside the same tab goes straight to the site. To watch it
+again, open a new tab or run `sessionStorage.clear()` in the console.
+
+It can be dismissed with the **skip intro** button, `Esc`, `Enter` or `Space`, closes itself
+after ~2.5 s, and has a 9 s hard failsafe so the page can never stay locked. An inline script
+in `<head>` decides before first paint whether to show it, which also means the overlay is
+never rendered when scripting is off. Edit the log lines directly in `index.html`.
 
 Images: `firstcatlogo.png` (original), `seal.jpg` (compressed hero copy),
 `favicon-32.png` / `favicon-180.png` (cropped from the logo), `og-image.jpg` (1200×630 social card).

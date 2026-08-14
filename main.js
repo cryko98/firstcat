@@ -5,6 +5,57 @@
   'use strict';
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var docEl = document.documentElement;
+
+  /* ── boot sequence ────────────────────────────────────── */
+  (function () {
+    var boot = document.getElementById('boot');
+    var closed = false;
+    var timer;
+
+    function close(instant) {
+      if (closed) return;
+      closed = true;
+      clearTimeout(timer);
+      docEl.classList.remove('is-booting');
+      if (!boot) return;
+      if (instant) { boot.remove(); return; }
+      boot.classList.add('is-done');
+      setTimeout(function () { if (boot.parentNode) boot.remove(); }, 600);
+    }
+
+    if (!boot || docEl.classList.contains('no-boot')) { close(true); return; }
+    try { sessionStorage.setItem('proailurus-booted', '1'); } catch (e) {}
+
+    var lines = boot.querySelectorAll('.boot__log > li');
+    var bar = boot.querySelector('.boot__bar span');
+    var skip = boot.querySelector('.boot__skip');
+
+    if (reduced) {
+      Array.prototype.forEach.call(lines, function (li) { li.classList.add('is-on'); });
+      if (bar) { bar.style.transitionDuration = '0ms'; bar.style.width = '100%'; }
+      timer = setTimeout(close, 700);
+    } else {
+      var step = 250;
+      var total = 300 + step * lines.length + 450;
+      Array.prototype.forEach.call(lines, function (li, i) {
+        setTimeout(function () { li.classList.add('is-on'); }, 300 + i * step);
+      });
+      requestAnimationFrame(function () {
+        if (!bar) return;
+        bar.style.transitionDuration = total + 'ms';
+        bar.style.width = '100%';
+      });
+      timer = setTimeout(close, total + 320);
+    }
+
+    if (skip) skip.addEventListener('click', function () { close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close();
+    });
+    /* never let a stalled animation trap the page */
+    setTimeout(function () { close(true); }, 9000);
+  })();
 
   /* ── current year in the colophon ─────────────────────── */
   var yearEl = document.getElementById('year');
